@@ -41,3 +41,12 @@ O _discriminator_ da ESRGAN é baseado na _PatchGAN_ que avalia se _patches_ da 
 A _loss function_ do _generator_ combina: _pixel-wise loss_, _perceptual loss_ (VGG) e _adversarial loss_.
 
 # Meu Modelo
+
+O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações específicas para o problema. Abaixo, descreverei as mudanças que foram feitas em cada arquivo e os problemas que resultaram nessas mudanças:
+
+`architecture.py`: a camada de arquitetura foi implementada seguindo os passos do artigo  **[Wang et al. 2018](https://arxiv.org/abs/1809.00219)**. 
+
+1. A primeira mudança está nas últimas camadas da geradora que foram alteradas para retornar 3 imagens em vez de 1 só. Cada imagem é resultado de uma camada de saída diferente, mais especificamente:
+    - Imagem 1: a camada final é um bloco onde tem duas vezes uma convolução 9x9 seguida de uma _LeakyReLU_ e uma convolução final 9x9.
+    - Imagem 2: a camada final é uma convolução 9x9 seguida de uma _LeakyReLU_ e uma convolução final 9x9.
+    - Imagem 2: a camada final é uma convolução 9x9 seguida de uma _LeakyReLU_ e uma convolução final .
