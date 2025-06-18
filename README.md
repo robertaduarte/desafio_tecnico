@@ -54,3 +54,6 @@ O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações 
 2. A segunda mudança é no adicional de um condicional de escalas porque uma escala de 2 precisa de apenas 1 _Upsampling Layer_ enquanto uma escala de 8 precisa de 3 _Upsampling Layers_. Cada _Upsampling Layer_ aumenta a imagem em 2x. Então dependendo da condicional que é recebida na classe da _generator_, o modelo se organiza para ser treinado com a escala escolhida.
 
 3. Adicionei uma convolução 3x3 antes da camada _PixelShuffle_ para refinar o treinamento.
+
+`perceptual_loss.py`: implementa a _perceptual loss_ baseada no modelo pré-treinado VGG para comparar as features.
+
