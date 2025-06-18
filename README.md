@@ -67,6 +67,25 @@ O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações 
 
 `requirements.txt`: todos requisitos para rodar o código
 
+### Hiperparâmetros
+
+Nesse trabalho, os hiperparâmetros foram:
+
+1. Número de camadas de convolução na saída da geradora para cada uma das 3 imagens
+2. Número de filtros
+3. _Batch size_
+
+Como a ESRGAN tem uma literatura robusta e bem estabelecida, diversos hiperparâmetros tradicionais (como _learning rate_, pesos das loss, etc) já eram estabelecidos como _default_ para esse caso.
+
+### Métricas
+
+As métricas utilizadas para avaliar o resultado na parte de validação são métricas usadas tradicionalmente em análises de problemas de visão computacional:
+
+1.  MSE (Mean Squared Error): avalia, em valor absoluto, a diferença entre a imagem gerada e o _target_ como a média dos _pixels_.
+2.  PSNR (Peak Signal-to-Noise Ratio): representa a qualidade da imagem gerada em relação ao _target_.
+3.  SSIM (Structural Similarity Index Measure): avalia se as imagens têm a mesma estrutura e aparência visual.
+
+
 # Resultados
 
 ## Sandbox
