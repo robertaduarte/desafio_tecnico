@@ -2,7 +2,7 @@ import os
 from PIL import Image
 
 from import_data import proximo_batch
-from visualization import save_matplotlib
+from evaluation import evaluation 
 from architecture import *
 from perceptual_loss import *
 
@@ -164,7 +164,7 @@ def train(img_size_input, img_size_target, lr_dir, hr_dir, lr_dir_val, hr_dir_va
         '''
         Avaliação do set de validação
         '''     
-        save_matplotlib(img_size_input, img_size_target, lr_dir_val, hr_dir_val, generator, epoch, out_dir)
+        evaluation(img_size_input, img_size_target, lr_dir_val, hr_dir_val, generator, epoch, out_dir)
 
         '''
         Salvando o modelo
