@@ -63,7 +63,7 @@ O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações 
 
 `evaluation.py`: arquivo realiza a avaliação em cima das imagens de validação e retorna a imagem gerada no diretório, a imagem possui as 3 imagens geradas pela _generator_ assim como as métricas MSE, SSIM e PNSR para cada uma em comparaão ao target.
 
-`score.py`: 
+`score.py`: retorna as métricas e rankeia da melhor para pior imagem além de dar qual é a mais provável de ser confundida com target
 
 `requirements.txt`: todos requisitos para rodar o código
 
