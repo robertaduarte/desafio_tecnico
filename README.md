@@ -67,4 +67,9 @@ O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações 
 
 `requirements.txt`: todos requisitos para rodar o código
 
+# Resultados
+
+## Sandbox
+
+Na pasta,  `modelo_RAM` há versões dos arquivos `data.py`, `train.py` e `evaluation.py` para uso com _dataloader_.
 
