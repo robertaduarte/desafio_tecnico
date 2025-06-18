@@ -57,3 +57,8 @@ O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações 
 
 `perceptual_loss.py`: implementa a _perceptual loss_ baseada no modelo pré-treinado VGG para comparar as features.
 
+`data.py`: o arquivo possui funções que tratam os dados e preparam batches, um de cada vez. Apesar da preparação em loop, esse formato é eficiente para não gastar a RAM quando todos dados são guarados de uma vez em um _dataloader_ (na pasta `modelo_RAM` tem um `data.py` que cria um _dataloader_ que pode ser eficiente para dados menores).
+
+
+
+
