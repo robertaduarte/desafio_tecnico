@@ -1,8 +1,11 @@
 import torch
 import torch.nn as nn
 
-#Camada de bloco residual, chamada de RRDB 
+
 class ResidualBlock(nn.Module):
+    '''
+    Camada de bloco residual (RRDB)
+    '''
     def __init__(self, num_filters):
         super().__init__()
 
@@ -17,8 +20,11 @@ class ResidualBlock(nn.Module):
     def forward(self, x):
         return x + self.block(x)
 
-#Camada de UpSampling modificada
 class UpsampleBlock(nn.Module):
+    '''
+    Camada de UpSampling modificada 
+    com uma convolução antes do PixelShuffle
+    '''
     def __init__(self, in_channels, scale_factor=2):
         super().__init__()
         self.block = nn.Sequential(
@@ -33,6 +39,11 @@ class UpsampleBlock(nn.Module):
 #Camada geradora modificada
 #Os valores de canais, filtros e número de camadas de bloco são baseadas no artigo
 class Generator(nn.Module):
+    '''
+    Camada geradora modificada para gerar 3 saídas
+    Cada saída possui uma camada de output diferente
+    Os valores de canais, filtros e número de camadas de bloco são baseadas no artigo
+    '''
     def __init__(self, which_scale, in_channels=3, num_filters=64, num_res_blocks=23):
         super().__init__()
 
@@ -106,8 +117,10 @@ class Generator(nn.Module):
 
             return out1, out2, out3
     
-#Discriminadora seguindo o artigo Wang et al. 2018
 class Discriminator(nn.Module):
+    '''
+    Discriminadora seguindo o artigo Wang et al. 2018
+    '''
     def __init__(self, in_channels=3):
         super().__init__()
 
