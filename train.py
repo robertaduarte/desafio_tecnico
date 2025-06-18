@@ -86,6 +86,18 @@ para imagens maiores e que use muita RAM
 '''
 def train(img_size_input, img_size_target, lr_dir, hr_dir, lr_dir_val, hr_dir_val, out_dir, epochs=100):
 
+  '''
+  Args:
+
+  img_size_input: tamanho da imagem de input
+  img_size_output: tamanho da imagem de output
+  lr_dir: diretório das imagens de baixa resolução
+  hr_dir: diretório das imagens de alta resolução
+  lr_dir_val: diretório das imagens de validação de baixa resolução
+  hr_dir_val: diretório das imagens de validação de alta resolução
+  epochs: número de épocas
+  '''
+
     batch_size = 8
 
     for epoch in range(epochs):
