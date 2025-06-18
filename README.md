@@ -91,6 +91,27 @@ Para evitar o overfitting, a _perceptual loss_ ajuda forçando o modelo a aprend
 
 # Resultados
 
+# Limitações
+
+A limitação encontrada foi de natureza computacional visto que as imagens de resolução 2K não puderam ser usada. Para isso, os treinamentos ocorreram de forma que:
+
+2x: 256 x 128 para 512 x 256
+4x: 128 x 64 para 512 x 256
+8x: 128 x 64 para 1024 x 512
+
+Outra limitação é que quanto menor a resolução, pior é o treinamento e mais difícil é a convergência.
+
+# Aprimoramento
+
+Uma lista de possíveis aprimoramentos são:
+
+1. Adicionar _data augmentation_.
+2. Treinar com _inputs_ que recebem ruído na entrada.
+3. Testar 3 _generators_ no mesmo modelo em vez de mudar apenas a saída de 1 _generator_.
+4. Adicionar uma _ranked loss_ que penaliza a pior imagem gerada e reforça a melhor.
+5. Como parte da arquitetura é condicional, treinar com diferentes escalas ao mesmo tempo.
+6. Adicionar camadas de atenção na _generator_
+
 ## Sandbox
 
 Na pasta,  `modelo_RAM` há versões dos arquivos `data.py`, `train.py` e `evaluation.py` para uso com _dataloader_.
