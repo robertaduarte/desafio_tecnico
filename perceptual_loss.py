@@ -16,9 +16,11 @@ class PerceptualLoss(nn.Module):
         self.criterion = nn.L1Loss()
 
     def forward(self, fake_hr, hr):
+        '''
+        para usar a loss function baseada no VGG, é necessário normalizar para os dados do VGG
+        a normalização só acontece nessa fase para comparar os features através de uma L1Loss
+        '''
 
-        #para usar a loss function baseada no VGG, é necessário normalizar para os dados do VGG
-        #a normalização só acontece nessa fase para comparar os features através de uma L1Loss
         normalize_vgg = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 
         fake_hr = normalize_vgg(fake_hr)
