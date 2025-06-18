@@ -85,6 +85,9 @@ As métricas utilizadas para avaliar o resultado na parte de validação são m�
 2.  PSNR (Peak Signal-to-Noise Ratio): representa a qualidade da imagem gerada em relação ao _target_.
 3.  SSIM (Structural Similarity Index Measure): avalia se as imagens têm a mesma estrutura e aparência visual.
 
+### Overfitting
+
+Para evitar o overfitting, a _perceptual loss_ ajuda forçando o modelo a aprender representações visuais que já foram pré-treinadas em outra base de dados e não a memorizar pixel a pixel. Outro ponto é que as GANs, em geral, evitam o overfitting graças a _discriminator_, isso porque conforme o _discriminator_ também é aprendido durante o processo e é necessário que imagens mais realistas sejam criadas para diferentes cenários. A presença do bloco RRDB também contribui para evitar o _overfitting_ porque a rede fica mais estável e generalizável com as conexões no RRDB. 
 
 # Resultados
 
