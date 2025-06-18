@@ -5,6 +5,12 @@ import torch.nn as nn
 class ResidualBlock(nn.Module):
     '''
     Camada de bloco residual (RRDB)
+
+    Args:
+    num_filters: número de filtros usados
+
+    Return:
+    Tensor
     '''
     def __init__(self, num_filters):
         super().__init__()
@@ -24,6 +30,13 @@ class UpsampleBlock(nn.Module):
     '''
     Camada de UpSampling modificada 
     com uma convolução antes do PixelShuffle
+
+    Args:
+    in_channels: canais de entrada (geralmente 3)
+    scale_factor: quanto deve aumentar
+
+    Return:
+    Tensor
     '''
     def __init__(self, in_channels, scale_factor=2):
         super().__init__()
@@ -43,6 +56,16 @@ class Generator(nn.Module):
     Camada geradora modificada para gerar 3 saídas
     Cada saída possui uma camada de output diferente
     Os valores de canais, filtros e número de camadas de bloco são baseadas no artigo
+
+    Args:
+
+    which_scale = qual escala aumentar
+    in_channels = canais de entrada (3)
+    num_filters = número de filtros
+    num_res_blocks = número de blocos (geralmente 23)
+
+    Return:
+    Tensores gerados da imagem de super resolução
     '''
     def __init__(self, which_scale, in_channels=3, num_filters=64, num_res_blocks=23):
         super().__init__()
@@ -120,6 +143,13 @@ class Generator(nn.Module):
 class Discriminator(nn.Module):
     '''
     Discriminadora seguindo o artigo Wang et al. 2018
+
+    Args:
+
+    in_channels = canais de entrada
+
+    Return:
+    Valor de 0 a 1 onde 0 é falso e 1 é verdadeiro
     '''
     def __init__(self, in_channels=3):
         super().__init__()
