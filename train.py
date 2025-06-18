@@ -182,7 +182,7 @@ def train(img_size_input, img_size_target, lr_dir, hr_dir, lr_dir_val, hr_dir_va
         Salvando o modelo
         '''
         torch.save(generator.state_dict(), out_dir+str(epoch)+".pth")
-        torch.save(discriminator.state_dict(), out_dir+str(epoch)+".pth")
+        #torch.save(discriminator.state_dict(), out_dir+str(epoch)+".pth")
 
 
 train(img_size_input, img_size_target, lr_dir, hr_dir, lr_dir_val, hr_dir_val, output_dir, epochs=100)
