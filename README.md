@@ -114,5 +114,4 @@ Uma lista de possíveis aprimoramentos são:
 
 ## Sandbox
 
-Na pasta,  `modelo_RAM` há versões dos arquivos `data.py`, `train.py` e `evaluation.py` para uso com _dataloader_.
-
+Na pasta,  `data_RAM` há um file `data.py` que exemplifica o uso de um _dataloader_ nesse caso. _dataloader_ é interessante para caso de paralelização dos dados. 
