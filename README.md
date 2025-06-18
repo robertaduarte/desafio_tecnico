@@ -24,7 +24,7 @@ O _generator_ é projetado para aumentar a resolução de imagens de forma reali
 
 2. _Residual-in-Residual Dense Block (RRDB)_: cada RRDB contém três _Dense Blocks_ conectados com conexões residuais internas e externas: camadas _DenseNet_ que recebem como entrada as camadas anteriores, sem uso de _batch normalization_, função de ativação _LeakyReLU_ e _residual scaling_ com fator de 0.2 para evitar instabilidades.
 
-3. _Upsampling Layers_: uma camada de convolução 3x3 seguida de uma camada de _PixelShuffle_ que dobram a resolução a cada passo. Cada _Upsampling_ é seguido por uma ativação _LeakyReLU_.
+3. _Upsampling Layers_: uma camada de _PixelShuffle_ que dobram a resolução a cada passo seguida por uma ativação _LeakyReLU_.
 
 4. _Output Convolution_: Uma última convolução 3x3 que projeta o tensor final de volta para o número de canais da imagem RGB (3).
 
@@ -49,4 +49,8 @@ O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações 
 1. A primeira mudança está nas últimas camadas da geradora que foram alteradas para retornar 3 imagens em vez de 1 só. Cada imagem é resultado de uma camada de saída diferente, mais especificamente:
     - Imagem 1: a camada final é um bloco onde tem duas vezes uma convolução 9x9 seguida de uma _LeakyReLU_ e uma convolução final 9x9.
     - Imagem 2: a camada final é uma convolução 9x9 seguida de uma _LeakyReLU_ e uma convolução final 9x9.
-    - Imagem 2: a camada final é uma convolução 9x9 seguida de uma _LeakyReLU_ e uma convolução final .
+    - Imagem 3: a camada final é uma convolução 9x9.
+      
+2. A segunda mudança é no adicional de um condicional de escalas porque uma escala de 2 precisa de apenas 1 _Upsampling Layer_ enquanto uma escala de 8 precisa de 3 _Upsampling Layers_. Cada _Upsampling Layer_ aumenta a imagem em 2x. Então dependendo da condicional que é recebida na classe da _generator_, o modelo se organiza para ser treinado com a escala escolhida.
+
+3. Adicionei uma convolução 3x3 antes da camada _PixelShuffle_ para refinar o treinamento.
