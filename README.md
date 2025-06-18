@@ -95,9 +95,9 @@ Para evitar o overfitting, a _perceptual loss_ ajuda forçando o modelo a aprend
 
 A limitação encontrada foi de natureza computacional visto que as imagens de resolução 2K não puderam ser usada. Para isso, os treinamentos ocorreram de forma que:
 
-2x: 256 x 128 para 512 x 256
-4x: 128 x 64 para 512 x 256
-8x: 128 x 64 para 1024 x 512
+-  2x: 256 x 128 para 512 x 256
+-  4x: 128 x 64 para 512 x 256
+-  8x: 128 x 64 para 1024 x 512
 
 Outra limitação é que quanto menor a resolução, pior é o treinamento e mais difícil é a convergência.
 
