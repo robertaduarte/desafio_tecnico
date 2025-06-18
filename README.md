@@ -59,6 +59,6 @@ O meu modelo segue o formato de uma ESRGAN tradicional com algumas alterações 
 
 `data.py`: o arquivo possui funções que tratam os dados e preparam batches, um de cada vez. Apesar da preparação em loop, esse formato é eficiente para não gastar a RAM quando todos dados são guarados de uma vez em um _dataloader_ (na pasta `modelo_RAM` tem um `data.py` que cria um _dataloader_ que pode ser eficiente para dados menores).
 
-
+`train.py`: o arquivo possui o loop de treinamento que considera batches separados. Além disso, primeiro a discriminadora é treinada e depois a geradora é treinada onde ela devolve 3 imagens que são comparadas com o target e a _loss function_ é somada. Ao final, o modelo chama o arquivo `evaluation.py` que plota os resultados ao final de cada época assim como as métricas de validação.
 
 
