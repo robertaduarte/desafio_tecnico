@@ -111,22 +111,17 @@ Os pesos para cada modelo estão na pasta `pesos` onde os arquivos  `scale_2x.pt
 
 # Limitações
 
--  Custo computacional elevado:
+1. **Custo computacional elevado**:
   -  Impediu o uso de imagens em resolução 2K, limitando o treinamento a resoluções mais baixas.
+  -  Isso comprometeu o aprendizado de detalhes finos, importantes para a reconstrução de imagens mais realistas.
 
-Isso compromete o aprendizado de detalhes finos, importantes para a reconstrução de texturas realistas.
+2. **Arquitetura simplificada**:
 
-🧠 Arquitetura simplificada:
+Devido às restrições de hardware, não foi possível testar versões mais profundas da rede, com mais camadas ou blocos residuais, o que pode ter limitado a capacidade do modelo aprender alguns detalhes, principalmente no caso de `8x`.
 
-Devido às restrições de hardware, não foi possível testar versões mais profundas da rede, com mais camadas ou blocos residuais, o que pode ter limitado a capacidade expressiva do modelo.
+3. **Tempo de processamento por época**:
 
-🕒 Tempo de processamento por época:
-
-O treinamento lento dificultou o uso de um número maior de épocas, prejudicando a convergência e a estabilidade do modelo.
-
-🖼️ Restrições no conjunto de dados:
-
-As imagens de validação utilizaram degradações artificiais conhecidas, o que pode não representar com fidelidade os desafios reais, como compressões, ruídos e distorções naturais.
+O treinamento lento dificultou o uso de um número maior de épocas, isso dificultou uma convergência melhor.
 
 # Aprimoramento
 
