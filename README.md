@@ -105,6 +105,8 @@ Alguns pontos a serem discutidos:
 2. Como esperado, o _upscale_ de `8x` foi o mais desafiador e com os resultados inferiores aos de `2x` e `4x`. Isso se deve a necessidade de uma arquitetura maior que seja capaz de capturar os detalhes mais finos das imagens. Apesar disso, algumas das imagens geradas pelo modelo treinado `8x` alcançam SSIM de 0.8 indicando uma boa semelhança com o _target_.
 3. `2x` e `4x` possuem resultados semelhantes e também variam o valor do SSIM que ficam por volta de 0.7 até 0.8. Isso reflete também a resolução da imagem de _output_ que não possui uma resolução tão alta (512 x 256) fazendo com que o modelo não aprenda bem detalhes mais finos.
 
+Os pesos para cada modelo estão na pasta `pesos` onde os arquivos  `scale_2x.pth`, `scale_4x.pth` e `scale_8x.pth` são para `2x`, `4x` e `8x`, respectivamente.
+
 # Limitações
 
 A limitação encontrada foi de natureza computacional visto que as imagens de resolução 2K não puderam ser usada.
