@@ -91,6 +91,8 @@ Para evitar o overfitting, a _perceptual loss_ ajuda forçando o modelo a aprend
 
 # Resultados
 
+Os resultados podem ser encontrados na pasta `imagens`
+
 # Limitações
 
 A limitação encontrada foi de natureza computacional visto que as imagens de resolução 2K não puderam ser usada. Para isso, os treinamentos ocorreram de forma que:
