@@ -14,10 +14,10 @@ import matplotlib.pyplot as plt
 from torchvision import transforms
 import torchvision.transforms as T
 
-lr_dir_val = "C:\\Users\\impor\\Downloads\\prova_tecnica\\lr_low_val\\"
-hr_dir_val =  "C:\\Users\\impor\\Downloads\\prova_tecnica\\hr_val\\"
+lr_dir_val = "/diretorio/dos/dados/de/baixa/resolução/de/validação/"
+hr_dir_val =  "/diretorio/dos/dados/de/alta/resolução/de/validação/"
 
-output_dir = "C:\\Users\\impor\\Downloads\\prova_tecnica\\outputs1\\2x\\"
+output_dir = "/diretorio/de/outputs/"
 
 scale = 2
 
@@ -39,7 +39,7 @@ else:
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
 
 generator = Generator(scale).to(device)
-generator.load_state_dict(torch.load("C:\\Users\\impor\\Downloads\\prova_tecnica\\outputs1\\68.pth"))
+generator.load_state_dict(torch.load("/diretorio/do/modelo/"))
 generator.eval()
 
 
