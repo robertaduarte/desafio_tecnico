@@ -111,7 +111,7 @@ Os pesos para cada modelo estão na pasta `pesos` onde os arquivos  `scale_2x.pt
 
 # Limitações
 
-1. **Custo computacional elevado**:
+1. **Custo computacional muito alto**:
   -  Impediu o uso de imagens em resolução 2K, limitando o treinamento a resoluções mais baixas.
   -  Isso comprometeu o aprendizado de detalhes finos, importantes para a reconstrução de imagens mais realistas.
 
