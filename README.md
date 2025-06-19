@@ -91,7 +91,13 @@ Para evitar o overfitting, a _perceptual loss_ ajuda forçando o modelo a aprend
 
 # Resultados
 
-Os resultados podem ser encontrados na pasta `imagens`
+Os resultados podem ser encontrados na pasta `imagens` onde dentro possui 3 pastas com nomes `2x`, `4x` e `8x` correspondendo ao _upscale_ associado assim como o arquivo `inference.py` que originou cada imagem. Cada imagem possui as métricas MSE, PSNR, SSIM em cima e a última columa representa o target.
+
+Alguns pontos a serem discutidos:
+
+1. Todos os modelos conseguiram recuperar bem as estruturas e cores da imagem conforme o modelo foi sendo treinado. É possível observar isso nas imagens que várias não possuem diferenças a olho nu e as diferenças só são capturados pelas métricas correspondendo.
+2. Como esperado, o _upscale_ de `8x` foi o mais desafiador e com os resultados inferiores aos de `2x` e `4x`. Isso se deve a necessidade de uma arquitetura maior que seja capaz de capturar os detalhes mais finos das imagens. Apesar disso, algumas das imagens geradas pelo modelo treinado `8x` alcançam SSIM de 0.8 indicando uma boa semelhança com o _target_.
+3. `2x` e `4x` possuem resultados semelhantes e também variam o valor do SSIM que ficam por volta de 0.7 até 0.8. Isso reflete também a resolução da imagem de _output_ que não possui uma resolução tão alta (512 x 256) fazendo com que o modelo não aprenda bem detalhes mais finos.
 
 # Limitações
 
@@ -113,7 +119,8 @@ Uma lista de possíveis aprimoramentos são:
 4. Testar 3 _generators_ no mesmo modelo em vez de mudar apenas a saída de 1 _generator_.
 5. Adicionar uma _ranked loss_ que penaliza a pior imagem gerada e reforça a melhor.
 6. Como parte da arquitetura é condicional, treinar com diferentes escalas ao mesmo tempo.
-7. Adicionar camadas de atenção na _generator_
+7. Adicionar camadas de atenção na _generator_.
+8. Fazer treinamento em paralelo no espaço de Fourier para pegar diferentes escalas.
 
 ## Sandbox
 
