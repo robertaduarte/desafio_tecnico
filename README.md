@@ -97,7 +97,7 @@ Os resultados podem ser encontrados na pasta `imagens` onde dentro possui 3 past
 
 As escalas usadas foram (veja a seção Limitações):
 
--  2x: 256 x 128 para 512 x 256
+-  2x: 128 x 64 para 256 x 128
 -  4x: 128 x 64 para 512 x 256
 -  8x: 128 x 64 para 1024 x 512
 
