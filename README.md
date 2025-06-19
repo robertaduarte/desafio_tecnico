@@ -117,11 +117,11 @@ Os pesos para cada modelo estão na pasta `pesos` onde os arquivos  `scale_2x.pt
 
 2. **Arquitetura simplificada**:
 
-Devido às restrições de hardware, não foi possível testar versões mais profundas da rede, com mais camadas ou blocos residuais, o que pode ter limitado a capacidade do modelo aprender alguns detalhes, principalmente no caso de `8x`.
+  - Devido às restrições de hardware, não foi possível testar versões mais profundas da rede, com mais camadas ou blocos residuais, o que pode ter limitado a capacidade do modelo aprender alguns detalhes, principalmente no caso de `8x`.
 
 3. **Tempo de processamento por época**:
 
-O treinamento lento dificultou o uso de um número maior de épocas, isso dificultou uma convergência melhor.
+  - O treinamento lento dificultou o uso de um número maior de épocas, isso dificultou uma convergência melhor.
 
 # Aprimoramento
 
