@@ -106,11 +106,12 @@ Outra limitação é que quanto menor a resolução, pior é o treinamento e mai
 Uma lista de possíveis aprimoramentos são:
 
 1. Adicionar _data augmentation_.
-2. Treinar com _inputs_ que recebem ruído na entrada.
-3. Testar 3 _generators_ no mesmo modelo em vez de mudar apenas a saída de 1 _generator_.
-4. Adicionar uma _ranked loss_ que penaliza a pior imagem gerada e reforça a melhor.
-5. Como parte da arquitetura é condicional, treinar com diferentes escalas ao mesmo tempo.
-6. Adicionar camadas de atenção na _generator_
+2. Rodar por mais épocas para uma convergência melhor (os modelos não treinaram por muito tempo, apenas cerca de 50 a 80 épocas por questões computacionais)
+3. Treinar com _inputs_ que recebem ruído na entrada.
+4. Testar 3 _generators_ no mesmo modelo em vez de mudar apenas a saída de 1 _generator_.
+5. Adicionar uma _ranked loss_ que penaliza a pior imagem gerada e reforça a melhor.
+6. Como parte da arquitetura é condicional, treinar com diferentes escalas ao mesmo tempo.
+7. Adicionar camadas de atenção na _generator_
 
 ## Sandbox
 
