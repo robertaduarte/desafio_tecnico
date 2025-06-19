@@ -93,6 +93,12 @@ Para evitar o overfitting, a _perceptual loss_ ajuda forçando o modelo a aprend
 
 Os resultados podem ser encontrados na pasta `imagens` onde dentro possui 3 pastas com nomes `2x`, `4x` e `8x` correspondendo ao _upscale_ associado assim como o arquivo `inference.py` que originou cada imagem. Cada imagem possui as métricas MSE, PSNR, SSIM em cima e a última columa representa o target.
 
+As escalas usadas foram (veja a seção Limitações):
+
+-  2x: 256 x 128 para 512 x 256
+-  4x: 128 x 64 para 512 x 256
+-  8x: 128 x 64 para 1024 x 512
+
 Alguns pontos a serem discutidos:
 
 1. Todos os modelos conseguiram recuperar bem as estruturas e cores da imagem conforme o modelo foi sendo treinado. É possível observar isso nas imagens que várias não possuem diferenças a olho nu e as diferenças só são capturados pelas métricas correspondendo.
@@ -101,11 +107,7 @@ Alguns pontos a serem discutidos:
 
 # Limitações
 
-A limitação encontrada foi de natureza computacional visto que as imagens de resolução 2K não puderam ser usada. Para isso, os treinamentos ocorreram de forma que:
-
--  2x: 256 x 128 para 512 x 256
--  4x: 128 x 64 para 512 x 256
--  8x: 128 x 64 para 1024 x 512
+A limitação encontrada foi de natureza computacional visto que as imagens de resolução 2K não puderam ser usada.
 
 Outra limitação é que quanto menor a resolução, pior é o treinamento e mais difícil é a convergência.
 
